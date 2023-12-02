@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: coderhouse
+    environment:
+      POSTGRES_DB: coderhouse
+      POSTGRES_USER: coderhouse
+      POSTGRES_PASSWORD: coderhouse
+    volumes:
+      - ./scripts/create.sql:/docker-entrypoint-initdb.d/create.sql
+    ports:
+      - "5432:5432"

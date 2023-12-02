@@ -1,4 +1,4 @@
-CREATE TABLE Customers(
+CREATE TABLE IF NOT EXISTS Customers(
     CustomerID INT PRIMARY KEY,
     FirstName  VARCHAR(50),
     LastName   VARCHAR(50),
@@ -6,7 +6,7 @@ CREATE TABLE Customers(
     Phone      VARCHAR(20)
 );
 
-CREATE TABLE Orders(
+CREATE TABLE IF NOT EXISTS Orders(
     OrderID     INT PRIMARY KEY,
     CustomerID  INT,
     OrderDate   DATE,
@@ -14,17 +14,16 @@ CREATE TABLE Orders(
     FOREIGN KEY (CustomerID) REFERENCES Customers (CustomerID)
 );
 
-CREATE TABLE OrderItems(
+CREATE TABLE IF NOT EXISTS OrderItems(
     OrderItemID INT PRIMARY KEY,
     OrderID     INT,
     ProductID   INT,
-    Quantity    INT, 8
-    Price
-    DECIMAL(10, 2),
+    Quantity    INT,
+    Price       DECIMAL(10, 2),
     FOREIGN KEY (OrderID) REFERENCES Orders (OrderID)
 );
 
-CREATE TABLE Products(
+CREATE TABLE IF NOT EXISTS Products(
     ProductID   INT PRIMARY KEY,
     ProductName VARCHAR(100),
     Category    VARCHAR(50),
