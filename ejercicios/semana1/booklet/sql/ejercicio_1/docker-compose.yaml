@@ -1,0 +1,44 @@
+services:
+  db_mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: coderhouse
+      MYSQL_DATABASE: coderhouse
+      MYSQL_USER: coderhouse
+      MYSQL_PASSWORD: coderhouse
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./csv:/opt/csv
+      - ./initdb_mysql:/docker-entrypoint-initdb.d
+      - ./config_mysql/custom.cnf:/etc/mysql/conf.d/custom.cnf
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8500:80"
+    environment:
+      PMA_HOST: db_mysql
+      MYSQL_ROOT_PASSWORD: coderhouse
+
+  db_postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: coderhouse
+      POSTGRES_USER: coderhouse
+      POSTGRES_PASSWORD: coderhouse
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./csv:/opt/csv
+      - ./initdb_postgres:/docker-entrypoint-initdb.d
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@coderhouse.com
+      PGADMIN_DEFAULT_PASSWORD: coderhouse
+    ports:
+      - "8600:80"
+    depends_on:
+      - db_postgres
