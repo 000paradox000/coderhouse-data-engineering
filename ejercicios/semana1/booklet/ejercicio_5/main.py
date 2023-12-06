@@ -5,7 +5,7 @@ hasta el 100
 
 
 def main():
-    print(sum(filter(lambda item: item % 2 != 0, range(0, 3))))
+    print(sum(filter(lambda item: item % 2 != 0, range(0, 101))))
 
 
 if __name__ == "__main__":

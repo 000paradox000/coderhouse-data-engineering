@@ -6,7 +6,7 @@ sin elementos duplicados.
 
 
 def main():
-    l1 = [1, 5.6, 90, 67, 67]
+    l1 = [1, 5.6, 90, 67, 67, 10]
     l2 = [67, 6, 9.078, 10, 3466]
 
     l3 = list(set(l1).intersection(set(l2)))

@@ -4,6 +4,7 @@ introduce un número impar, debe repetirse el proceso hasta que lo introduzca
 correctamente.
 """
 
+
 def main():
     while True:
         input_string = input("Digite un número impar: ")
@@ -20,6 +21,7 @@ def main():
 
         print("\tNúmero válido")
         break
+
 
 if __name__ == "__main__":
     main()
