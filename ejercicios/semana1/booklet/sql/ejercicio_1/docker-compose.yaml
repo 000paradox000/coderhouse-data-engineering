@@ -42,3 +42,28 @@ services:
       - "8600:80"
     depends_on:
       - db_postgres
+
+  python_with_psycopg2:
+    build:
+      context: python_with_psycopg2
+    depends_on:
+      - db_mysql
+      - db_postgres
+    volumes:
+      - ./sql:/opt/sql
+
+  flask_with_postgres:
+    build:
+      context: flask_with_postgres
+    depends_on:
+      - db_postgres
+    ports:
+      - "8700:5000"
+
+  fastapi_with_mysql:
+    build:
+      context: fastapi_with_mysql
+    depends_on:
+      - db_mysql
+    ports:
+      - "8800:8000"
