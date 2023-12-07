@@ -26,7 +26,7 @@ def index():
     agents_list = [{'agentid': agent.agentid, 'name': agent.name}
                    for agent in agents]
 
-    return jsonify({'agents': agents_list})
+    return jsonify(agents_list)
 
 
 @app.route('/agents')
@@ -37,7 +37,7 @@ def agents():
     agents_list = [{'agentid': agent.agentid, 'name': agent.name}
                    for agent in agents]
 
-    return jsonify({'agents': agents_list})
+    return jsonify(agents_list)
 
 
 @app.teardown_appcontext

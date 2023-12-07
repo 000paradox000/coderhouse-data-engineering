@@ -3,6 +3,7 @@ from typing import List
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
+from sqlalchemy import or_, func
 
 import models, schemas
 from database import SessionLocal, engine
@@ -30,7 +31,12 @@ def get_db():
 
 @app.get("/")
 def index(db: Session = Depends(get_db)) -> List[schemas.Agent]:
-    records = db.query(models.Agent).all()
+    records = db.query(models.Agent).filter(
+        or_(
+            func.lower(models.Agent.name).startswith('m'),
+            func.lower(models.Agent.name).endswith('o')
+        )
+    )
     return records
 
 @app.get("/agents/")
