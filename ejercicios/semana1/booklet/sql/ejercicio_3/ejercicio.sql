@@ -5,6 +5,6 @@
 SELECT
     customerid,
     name,
-    CASE WHEN age > 30 THEN 'SI' ELSE 'NO' END as mayor40
+    CASE WHEN age > 30 THEN 'SI' ELSE 'NO' END as mayor30
 FROM
     customers;
