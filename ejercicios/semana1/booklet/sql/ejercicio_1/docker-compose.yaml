@@ -7,7 +7,7 @@ services:
       MYSQL_USER: coderhouse
       MYSQL_PASSWORD: coderhouse
     ports:
-      - "3306:3306"
+      - "3308:3306"
     volumes:
       - ./csv:/opt/csv
       - ./initdb_mysql:/docker-entrypoint-initdb.d
@@ -28,7 +28,7 @@ services:
       POSTGRES_USER: coderhouse
       POSTGRES_PASSWORD: coderhouse
     ports:
-      - "5432:5432"
+      - "5438:5432"
     volumes:
       - ./csv:/opt/csv
       - ./initdb_postgres:/docker-entrypoint-initdb.d
