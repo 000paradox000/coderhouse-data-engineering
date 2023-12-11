@@ -41,3 +41,40 @@ CREATE TABLE calls(
 GO
 GRANT SELECT, INSERT, UPDATE, DELETE ON calls TO coderhouse;
 GO
+
+BULK INSERT agents
+FROM '/opt/data/csv/agents.csv'
+WITH
+(
+    FIRSTROW = 2,
+	FORMAT = 'CSV',
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '0x0a',
+	FIELDQUOTE = '"',
+    TABLOCK
+);
+GO
+
+BULK INSERT customers
+FROM '/opt/data/csv/customers.csv'
+WITH
+(
+    FIRSTROW = 2,
+	FORMAT = 'CSV',
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '0x0a',
+	FIELDQUOTE = '"',
+    TABLOCK
+);
+
+BULK INSERT calls
+FROM '/opt/data/csv/calls.csv'
+WITH
+(
+    FIRSTROW = 2,
+	FORMAT = 'CSV',
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '0x0a',
+	FIELDQUOTE = '"',
+    TABLOCK
+);

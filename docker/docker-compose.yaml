@@ -18,6 +18,7 @@ services:
     volumes:
       - ./mysql/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
       - ./mysql/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
 
   # PostgreSQL
   # ---------------------------------------------------------------------------
@@ -31,6 +32,7 @@ services:
       - "5438:5432"
     volumes:
       - ./postgres/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
 
   # Microsoft SQL Server
   # ---------------------------------------------------------------------------
@@ -44,6 +46,7 @@ services:
       - "1438:1433"
     volumes:
       - ./mssql/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
 
   # Database Web Clients
   # ===========================================================================

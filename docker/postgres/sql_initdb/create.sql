@@ -22,6 +22,6 @@ CREATE TABLE IF NOT EXISTS calls(
     productsold SMALLINT
 );
 
--- COPY customers FROM '/opt/csv/customers.csv' DELIMITER ',' CSV HEADER;
--- COPY agents FROM '/opt/csv/agents.csv' DELIMITER ',' CSV HEADER;
--- COPY calls FROM '/opt/csv/calls.csv' DELIMITER ',' CSV HEADER;
+COPY customers FROM '/opt/data/csv/customers.csv' DELIMITER ',' CSV HEADER;
+COPY agents FROM '/opt/data/csv/agents.csv' DELIMITER ',' CSV HEADER;
+COPY calls FROM '/opt/data/csv/calls.csv' DELIMITER ',' CSV HEADER;

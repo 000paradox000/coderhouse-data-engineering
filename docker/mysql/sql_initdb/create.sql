@@ -22,20 +22,20 @@ CREATE TABLE IF NOT EXISTS calls(
     productsold SMALLINT
 );
 
--- LOAD DATA INFILE '/opt/csv/customers.csv'
--- INTO TABLE customers
--- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS;
---
--- LOAD DATA INFILE '/opt/csv/agents.csv'
--- INTO TABLE agents
--- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS;
---
--- LOAD DATA INFILE '/opt/csv/calls.csv'
--- INTO TABLE calls
--- FIELDS TERMINATED BY ',' ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS;
+LOAD DATA INFILE '/opt/data/csv/customers.csv'
+INTO TABLE customers
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE '/opt/data/csv/agents.csv'
+INTO TABLE agents
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+LOAD DATA INFILE '/opt/data/csv/calls.csv'
+INTO TABLE calls
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
