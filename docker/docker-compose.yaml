@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  # Databases
+  # ===========================================================================
+
+  # MySQL
+  # ---------------------------------------------------------------------------
+  db_mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: coderhouse
+      MYSQL_DATABASE: coderhouse
+      MYSQL_USER: coderhouse
+      MYSQL_PASSWORD: coderhouse
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
+
+  # PostgreSQL
+  # ---------------------------------------------------------------------------
+  db_postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: coderhouse
+      POSTGRES_USER: coderhouse
+      POSTGRES_PASSWORD: coderhouse
+    ports:
+      - "5438:5432"

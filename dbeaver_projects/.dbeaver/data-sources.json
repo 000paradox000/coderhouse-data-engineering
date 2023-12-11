@@ -1,0 +1,56 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-18c58e46ece-74ceab2aada25946": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "coderhouse MySQL",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "3308",
+				"database": "coderhouse",
+				"url": "jdbc:mysql://localhost:3308/coderhouse",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2",
+					"allowPublicKeyRetrieval": "TRUE"
+				},
+				"auth-model": "native"
+			}
+		},
+		"postgres-jdbc-18c58e5b81c-3cfd02cc023e467a": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "coderhouse PostgreSQL",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5438",
+				"database": "coderhouse",
+				"url": "jdbc:postgresql://localhost:5438/coderhouse",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"provider-properties": {},
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800
+		}
+	}
+}
