@@ -28,3 +28,19 @@ services:
       POSTGRES_PASSWORD: coderhouse
     ports:
       - "5438:5432"
+
+  # Microsoft SQL Server
+  # ---------------------------------------------------------------------------
+  db_mssql:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: C0d3rhous3
+    healthcheck:
+      test: [ "CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P C0d3rhous3 -Q 'SELECT 1' || exit 1" ]
+      interval: 10s
+      retries: 10
+      start_period: 10s
+      timeout: 3s
+    ports:
+      - "1438:1433"
