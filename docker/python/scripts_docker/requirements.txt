@@ -1,0 +1,13 @@
+mysqlclient
+psycopg2-binary
+SQLAlchemy
+
+Flask-SQLAlchemy
+Flask
+
+uvicorn[standard]
+fastapi
+
+pillow
+requests
+

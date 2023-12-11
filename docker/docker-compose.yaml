@@ -96,3 +96,12 @@ services:
       - "8503:3000"
     depends_on:
       - db_mssql
+
+  # Python
+  # ===========================================================================
+
+  # Python doing infinite loop
+  # ---------------------------------------------------------------------------
+  python:
+    build:
+      context: ./python/scripts_docker
