@@ -53,7 +53,6 @@ services:
 
   # MySQL - phpmyadmin
   # ---------------------------------------------------------------------------
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
@@ -64,7 +63,6 @@ services:
 
   # PostgreSQL - pgadmin
   # ---------------------------------------------------------------------------
-
   pgadmin:
     image: dpage/pgadmin4
     environment:
@@ -77,3 +75,24 @@ services:
       - db_postgres
     volumes:
       - ./pgadmin/config/servers.json:/pgadmin4/servers.json
+
+
+  # Microsoft SQL Server - sqlpad
+  # ---------------------------------------------------------------------------
+  sqlpad_mssql:
+    image: sqlpad/sqlpad
+    environment:
+      SQLPAD_ADMIN: 'admin@coderhouse.com'
+      SQLPAD_ADMIN_PASSWORD: 'coderhouse'
+      SQLPAD_APP_LOG_LEVEL: info
+      SQLPAD_WEB_LOG_LEVEL: warn
+      SQLPAD_CONNECTIONS__sqlserverdemo__name: SQL Server
+      SQLPAD_CONNECTIONS__sqlserverdemo__driver: sqlserver
+      SQLPAD_CONNECTIONS__sqlserverdemo__host: db_mssql
+      SQLPAD_CONNECTIONS__sqlserverdemo__database: coderhouse
+      SQLPAD_CONNECTIONS__sqlserverdemo__username: coderhouse
+      SQLPAD_CONNECTIONS__sqlserverdemo__password: C0d3rhous3
+    ports:
+      - "8503:3000"
+    depends_on:
+      - db_mssql
