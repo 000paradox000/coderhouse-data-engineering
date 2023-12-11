@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "Coder House",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "coderhouse",
+            "Host": "db_postgres",
+            "MaintenanceDB": "coderhouse",
+            "SSLMode": "prefer"
+        }
+    }
+}

@@ -54,7 +54,23 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - "8500:80"
+      - "8501:80"
     environment:
       PMA_HOST: db_mysql
       MYSQL_ROOT_PASSWORD: coderhouse
+
+  # PostgreSQL - pgadmin
+  # ---------------------------------------------------------------------------
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@coderhouse.com
+      PGADMIN_DEFAULT_PASSWORD: coderhouse
+      PGADMIN_DISABLE_POSTFIX: 1
+    ports:
+      - "8502:80"
+    depends_on:
+      - db_postgres
+    volumes:
+      - ./pgadmin/config/servers.json:/pgadmin4/servers.json
