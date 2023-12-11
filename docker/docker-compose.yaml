@@ -17,6 +17,7 @@ services:
       - "3308:3306"
     volumes:
       - ./mysql/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
+      - ./mysql/sql_initdb:/docker-entrypoint-initdb.d
 
   # PostgreSQL
   # ---------------------------------------------------------------------------
@@ -28,22 +29,21 @@ services:
       POSTGRES_PASSWORD: coderhouse
     ports:
       - "5438:5432"
+    volumes:
+      - ./postgres/sql_initdb:/docker-entrypoint-initdb.d
 
   # Microsoft SQL Server
   # ---------------------------------------------------------------------------
   db_mssql:
-    image: mcr.microsoft.com/mssql/server
+    image: horizoncrafts/mssql-with-initdb
     environment:
       ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
       SA_PASSWORD: C0d3rhous3
-    healthcheck:
-      test: [ "CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P C0d3rhous3 -Q 'SELECT 1' || exit 1" ]
-      interval: 10s
-      retries: 10
-      start_period: 10s
-      timeout: 3s
     ports:
       - "1438:1433"
+    volumes:
+      - ./mssql/sql_initdb:/docker-entrypoint-initdb.d
 
   # Database Web Clients
   # ===========================================================================

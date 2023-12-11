@@ -46,8 +46,8 @@
 			"configuration": {
 				"host": "localhost",
 				"port": "1438",
-				"database": "master",
-				"url": "jdbc:sqlserver://;serverName\u003dlocalhost;port\u003d1438;databaseName\u003dmaster",
+				"database": "coderhouse",
+				"url": "jdbc:sqlserver://;serverName\u003dlocalhost;port\u003d1438;databaseName\u003dcoderhouse",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"provider-properties": {
