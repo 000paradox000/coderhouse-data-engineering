@@ -1,5 +1,9 @@
 # CODERHOUSE Data Engineering
 
+URL: https://plataforma-beta.coderhouse.com/cursos/56025/data-engineering-flex
+
+Teachers:
+
 - Juan Pablo Visbeek
 - Javier Poblete
 
