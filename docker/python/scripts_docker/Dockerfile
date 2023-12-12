@@ -11,8 +11,4 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY loop.sh .
-
-RUN chmod +x loop.sh
-
-CMD ["./loop.sh"]
+RUN mkdir /opt/notebooks

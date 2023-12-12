@@ -100,8 +100,15 @@ services:
   # Python
   # ===========================================================================
 
-  # Python doing infinite loop
+  # Python
   # ---------------------------------------------------------------------------
   python:
     build:
       context: ./python/scripts_docker
+    ports:
+      - "8504:8888"
+    depends_on:
+      - db_mssql
+      - db_mysql
+      - db_postgres
+    entrypoint: sh -c 'jupyter lab --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --NotebookApp.password="" --no-browser --notebook-dir=/opt/notebooks --allow-root'
