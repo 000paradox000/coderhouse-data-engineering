@@ -108,3 +108,29 @@ services:
     ports:
       - "8504:8888"
     entrypoint: sh -c 'jupyter lab --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --NotebookApp.password="" --no-browser --notebook-dir=/opt/notebooks --allow-root'
+
+  # Python 3.11
+  # ---------------------------------------------------------------------------
+  python:
+    build:
+      context: ./python/scripts_docker
+    depends_on:
+      - db_mssql
+      - db_mysql
+      - db_postgres
+    volumes:
+      - ../exercises:/opt/exercises
+
+  # Flask
+  # ---------------------------------------------------------------------------
+  flask:
+    build:
+      context: ./flask/scripts_docker
+    ports:
+      - "8505:5000"
+    depends_on:
+      - db_mssql
+      - db_mysql
+      - db_postgres
+    volumes:
+      - ../exercises:/opt/exercises

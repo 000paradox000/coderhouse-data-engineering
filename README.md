@@ -69,6 +69,19 @@ Teachers:
 |---------------|-----------------------|
 | URL           | http://localhost:8504 |
 
+### python
+
+| Setting                   | Value                                                 |
+|---------------------------|-------------------------------------------------------|
+| Version                   | 3.11                                                  |
+| Execute a python script   | docker compose exec -ti python bash -c "python PATH"  |
+
+### Flask
+
+| Setting       | Value      |
+|---------------|------------|
+| Port          | 8505       |
+
 ## Links
 
 - [Como Crear BASE DE DATOS en SQL SERVER Desde Cero 😉](https://www.youtube.com/watch?v=fyvEhDgKl7E)
