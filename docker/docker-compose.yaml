@@ -134,3 +134,17 @@ services:
       - db_postgres
     volumes:
       - ../exercises:/opt/exercises
+
+  # Fastapi
+  # ---------------------------------------------------------------------------
+  fastapi:
+    build:
+      context: ./fastapi/scripts_docker
+    ports:
+      - "8506:5000"
+    depends_on:
+      - db_mssql
+      - db_mysql
+      - db_postgres
+    volumes:
+      - ../exercises:/opt/exercises
