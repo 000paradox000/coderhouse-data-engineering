@@ -1,3 +1,6 @@
+import os
+
+
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql://coderhouse:coderhouse@db_postgres:5432/coderhouse'
+    SQLALCHEMY_DATABASE_URI = os.environ["SQLALCHEMY_DATABASE_URI"]
     SQLALCHEMY_TRACK_MODIFICATIONS = False
