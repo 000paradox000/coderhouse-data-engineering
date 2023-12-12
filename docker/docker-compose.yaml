@@ -141,7 +141,7 @@ services:
     build:
       context: ./fastapi/scripts_docker
     ports:
-      - "8506:5000"
+      - "8506:8000"
     depends_on:
       - db_mssql
       - db_mysql
