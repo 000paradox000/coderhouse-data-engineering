@@ -1,0 +1,34 @@
+{
+	"folders": {},
+	"connections": {
+		"mysql8-18c58e46ece-74ceab2aada25946": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "coderhouse",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "3308",
+				"database": "coderhouse",
+				"url": "jdbc:mysql://localhost:3308/coderhouse",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": false,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800
+		}
+	}
+}

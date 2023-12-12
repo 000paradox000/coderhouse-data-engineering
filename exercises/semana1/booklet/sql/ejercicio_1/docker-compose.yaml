@@ -63,7 +63,7 @@ services:
 #          ACCEPT_EULA: Y
 #          SA_PASSWORD: c0d3RHouse!@
 #          MSSQL_PID: "Express"
-
+# docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=pain91447485" -e "MSSQL_PID=Evaluation" -p 1443:1433  --name sqlpreview --hostname sqlpreview mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
 
   python_with_psycopg2:
     build:

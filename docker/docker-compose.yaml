@@ -1,0 +1,110 @@
+version: '3'
+
+services:
+  # Database Engines
+  # ===========================================================================
+
+  # MySQL
+  # ---------------------------------------------------------------------------
+  db_mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: coderhouse
+      MYSQL_DATABASE: coderhouse
+      MYSQL_USER: coderhouse
+      MYSQL_PASSWORD: coderhouse
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
+      - ./mysql/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
+
+  # PostgreSQL
+  # ---------------------------------------------------------------------------
+  db_postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: coderhouse
+      POSTGRES_USER: coderhouse
+      POSTGRES_PASSWORD: coderhouse
+    ports:
+      - "5438:5432"
+    volumes:
+      - ./postgres/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
+
+  # Microsoft SQL Server
+  # ---------------------------------------------------------------------------
+  db_mssql:
+    image: horizoncrafts/mssql-with-initdb
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: Express
+      SA_PASSWORD: C0d3rhous3
+    ports:
+      - "1438:1433"
+    volumes:
+      - ./mssql/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
+
+  # Database Web Clients
+  # ===========================================================================
+
+  # MySQL - phpmyadmin
+  # ---------------------------------------------------------------------------
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8501:80"
+    environment:
+      PMA_HOST: db_mysql
+      MYSQL_ROOT_PASSWORD: coderhouse
+
+  # PostgreSQL - pgadmin
+  # ---------------------------------------------------------------------------
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@coderhouse.com
+      PGADMIN_DEFAULT_PASSWORD: coderhouse
+      PGADMIN_DISABLE_POSTFIX: 1
+    ports:
+      - "8502:80"
+    depends_on:
+      - db_postgres
+    volumes:
+      - ./pgadmin/config/servers.json:/pgadmin4/servers.json
+
+
+  # Microsoft SQL Server - sqlpad
+  # ---------------------------------------------------------------------------
+  sqlpad_mssql:
+    image: sqlpad/sqlpad
+    environment:
+      SQLPAD_ADMIN: 'admin@coderhouse.com'
+      SQLPAD_ADMIN_PASSWORD: 'coderhouse'
+      SQLPAD_APP_LOG_LEVEL: info
+      SQLPAD_WEB_LOG_LEVEL: warn
+      SQLPAD_CONNECTIONS__sqlserverdemo__name: SQL Server
+      SQLPAD_CONNECTIONS__sqlserverdemo__driver: sqlserver
+      SQLPAD_CONNECTIONS__sqlserverdemo__host: db_mssql
+      SQLPAD_CONNECTIONS__sqlserverdemo__database: coderhouse
+      SQLPAD_CONNECTIONS__sqlserverdemo__username: coderhouse
+      SQLPAD_CONNECTIONS__sqlserverdemo__password: C0d3rhous3
+    ports:
+      - "8503:3000"
+    depends_on:
+      - db_mssql
+
+  # Python
+  # ===========================================================================
+
+  # Jupyter Lab
+  # ---------------------------------------------------------------------------
+  jupyterlab:
+    build:
+      context: ./jupyterlab/scripts_docker
+    ports:
+      - "8504:8888"
+    entrypoint: sh -c 'jupyter lab --ip=0.0.0.0 --port=8888 --NotebookApp.token="" --NotebookApp.password="" --no-browser --notebook-dir=/opt/notebooks --allow-root'
