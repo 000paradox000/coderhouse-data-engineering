@@ -51,7 +51,7 @@ SELECT
     customers.name AS customer_name,
     agents.name AS agent_name,
     CASE WHEN customers.age > 30 THEN 'SI' ELSE 'NO' END AS mayor30,
-    CASE WHEN productsold = 1 THEN 'SI' ELSE 'NO' END AS compro
+    CASE WHEN productsold >= 1 THEN 'SI' ELSE 'NO' END AS compro
 FROM
     calls,
     customers,
