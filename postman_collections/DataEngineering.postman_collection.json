@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "b559ce63-6623-4019-a7d8-02a8ffc93e1b",
+		"name": "DataEngineering",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8198028"
+	},
+	"item": [
+		{
+			"name": "Agents",
+			"item": [
+				{
+					"name": "List Agents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8505/agents/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8505",
+							"path": [
+								"agents",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List agents django postgres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/agents/postgres/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"agents",
+								"postgres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List agents django mysql",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/agents/mysql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"agents",
+								"mysql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List agents django mssql",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/agents/mssql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"agents",
+								"mssql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calls",
+			"item": [
+				{
+					"name": "List Calls",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8505/calls/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8505",
+							"path": [
+								"calls",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List calls django postgres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/calls/postgres/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"calls",
+								"postgres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List calls django mysql",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/calls/mysql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"calls",
+								"mysql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List calls django mssql",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/calls/mssql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"calls",
+								"mssql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "List Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8505/customers/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8505",
+							"path": [
+								"customers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List customers django postgres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/customers/postgres/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"customers",
+								"postgres",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List customers django mysql",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/customers/mysql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"customers",
+								"mysql",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List customers django mssql",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8507/customers/mssql/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8507",
+							"path": [
+								"customers",
+								"mssql",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
