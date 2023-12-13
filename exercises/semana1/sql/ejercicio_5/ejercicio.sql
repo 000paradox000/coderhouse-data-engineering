@@ -1,3 +1,5 @@
+-- ============================================================================
+-- Ejercicio 5
 -- Escribir dos consultas:
 
 -- Una que calcule las ventas totales y las llamadas totales realizadas a los
@@ -6,9 +8,8 @@
 -- Otra que calcule las mismas métricas para toda la base de clientes.
 
 SELECT
-    customers.name,
-    SUM(calls.productsold),
-    COUNT(calls.callid)
+    SUM(calls.productsold) AS total_sales,
+    COUNT(calls.callid) AS total_calls
 FROM
     calls,
     customers
@@ -16,15 +17,3 @@ WHERE
     calls.customerid = customers.customerid
     AND
     UPPER(customers.occupation) LIKE '%ENGINEER%'
-GROUP BY customers.name;
-
-SELECT
-    customers.name,
-    SUM(calls.productsold),
-    COUNT(calls.callid)
-FROM
-    calls,
-    customers
-WHERE
-    calls.customerid = customers.customerid
-GROUP BY customers.name;
