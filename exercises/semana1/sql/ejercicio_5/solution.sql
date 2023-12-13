@@ -17,3 +17,12 @@ WHERE
     calls.customerid = customers.customerid
     AND
     UPPER(customers.occupation) LIKE '%ENGINEER%'
+
+SELECT
+    SUM(ca.productsold) AS total_sales,
+    COUNT(*) AS total_calls
+FROM
+    customers cu
+JOIN calls ca ON ca.customerid = cu.customerid
+WHERE
+    UPPER(cu.occupation) LIKE '%ENGINEER%'

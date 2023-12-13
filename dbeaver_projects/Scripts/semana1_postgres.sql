@@ -62,7 +62,7 @@ ORDER BY customers.name DESC;
 
 SELECT
     ca.callid AS call_id,
-    cu.customerid AS customer_name,
+    cu.customerid AS customer_id,
     cu.name AS customer_name,
     CASE WHEN cu.age >= 30 THEN 'SI' ELSE 'NO' END AS mayor30,
     CASE WHEN ca.productsold >= 1 THEN 'SI' ELSE 'NO' END AS compro
@@ -92,6 +92,15 @@ WHERE
     calls.customerid = customers.customerid
     AND
     UPPER(customers.occupation) LIKE '%ENGINEER%'
+
+SELECT
+    SUM(ca.productsold) AS total_sales,
+    COUNT(*) AS total_calls
+FROM
+    customers cu
+JOIN calls ca ON ca.customerid = cu.customerid
+WHERE
+    UPPER(cu.occupation) LIKE '%ENGINEER%'
 
 -- ============================================================================
 -- Ejercicio 6
