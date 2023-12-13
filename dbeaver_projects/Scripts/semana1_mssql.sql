@@ -62,7 +62,7 @@ ORDER BY customers.name DESC;
 
 SELECT
     ca.callid AS call_id,
-    cu.customerid AS customer_name,
+    cu.customerid AS customer_id,
     cu.name AS customer_name,
     CASE WHEN cu.age >= 30 THEN 'SI' ELSE 'NO' END AS mayor30,
     CASE WHEN ca.productsold >= 1 THEN 'SI' ELSE 'NO' END AS compro
