@@ -1,6 +1,7 @@
-mysql-connector-python
+mysqlclient
 psycopg2-binary
 mssql-django
+pyodbc
 
 SQLAlchemy
 

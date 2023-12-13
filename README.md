@@ -48,46 +48,46 @@ docker compose up --build
 
 ### phpmyadmin MySQL database web client
 
-| Setting       | Value                   |
-|---------------|-------------------------|
-| URL           | http://localhost:8501   |
-| User          | coderhouse              |
-| Password      | C0d3rhous3              |
+| Setting   | Value                   |
+|-----------|-------------------------|
+| URL       | http://localhost:8501   |
+| User      | coderhouse              |
+| Password  | C0d3rhous3              |
 
 ### pgadmin PostgreSQL database web client
 
-| Setting       | Value                 |
-|---------------|-----------------------|
-| URL           | http://localhost:8502 |
-| User          | admin@coderhouse.com  |
-| Password      | coderhouse            |
+| Setting   | Value                 |
+|-----------|-----------------------|
+| URL       | http://localhost:8502 |
+| User      | admin@coderhouse.com  |
+| Password  | coderhouse            |
 
 ### sqlpad Microsoft SQL Server database web client
 
-| Setting       | Value                 |
-|---------------|-----------------------|
-| URL           | http://localhost:8503 |
-| User          | admin@coderhouse.com  |
-| Password      | C0d3rhous3            |
+| Setting   | Value                 |
+|-----------|-----------------------|
+| URL       | http://localhost:8503 |
+| User      | admin@coderhouse.com  |
+| Password  | C0d3rhous3            |
 
 ### jupyterlab
 
-| Setting       | Value                 |
-|---------------|-----------------------|
-| URL           | http://localhost:8504 |
+| Setting | Value                 |
+|---------|-----------------------|
+| URL     | http://localhost:8504 |
 
 ### python
 
-| Setting                   | Value                                                 |
-|---------------------------|-------------------------------------------------------|
-| Version                   | 3.11                                                  |
-| Execute a python script   | docker compose exec -ti python bash -c "python PATH"  |
+| Setting                 | Value                                                 |
+|-------------------------|-------------------------------------------------------|
+| Version                 | 3.11                                                  |
+| Execute a python script | docker compose exec -ti python bash -c "python PATH"  |
 
 ### Flask
 
-| Setting       | Value      |
-|---------------|------------|
-| Port          | 8505       |
+| Setting | Value |
+|---------|-------|
+| Port    | 8505  |
 
 ### Fastapi
 

@@ -30,14 +30,14 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    "coderhouse.apps.CoderHouseConfig",
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'home',
+    'coderhouse.home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
@@ -98,8 +98,18 @@ DATABASES = {
         "USER": "coderhouse",
         "PASSWORD": "C0d3rhous3",
         "HOST": "db_mssql",
+        "OPTIONS": {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
     },
 }
+
+DATABASE_ROUTERS = [
+    'coderhouse.home.routers.DBPostgresRouter',
+    'coderhouse.home.routers.DBMySQLRouter',
+    'coderhouse.home.routers.DBMSSQLRouter',
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
