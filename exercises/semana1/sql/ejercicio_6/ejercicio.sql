@@ -1,3 +1,5 @@
+-- ============================================================================
+-- Ejercicio 6
 -- Escribir una consulta que devuelva
 
 -- Para cada agente: el nombre del agente, la cantidad de llamadas, las
@@ -13,12 +15,12 @@
 -- contrario ¡todas las duraciones mínimas serán 0!)
 
 SELECT
-    agents.name AS AgentName,
-    COUNT(calls.callid) AS NCalls,
-    MAX(calls.duration) AS Shortest,
-    MIN(calls.duration) AS Longest,
-    AVG(calls.duration) AS AvgDuration,
-    SUM(calls.productsold) AS TotalSales
+    agents.name AS agent_name,
+    COUNT(calls.callid) AS total_calls,
+    MAX(calls.duration) AS shortest_call,
+    MIN(calls.duration) AS longest_call,
+    AVG(calls.duration) AS avg_duration,
+    SUM(calls.productsold) AS total_sales
 FROM
     calls,
     agents
@@ -29,4 +31,4 @@ WHERE
 GROUP BY
     agents.name
 ORDER BY
-    AgentName ASC;
+    agent_name ASC;
