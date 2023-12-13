@@ -1,4 +1,7 @@
+-- ============================================================================
+-- Ejercicio 1
 -- Extraer agentes cuyo nombre empieza por M o termina en O.
+
 SELECT
     *
 FROM
