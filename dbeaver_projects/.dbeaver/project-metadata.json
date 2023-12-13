@@ -1,1 +1,1 @@
-{"resources":{"Scripts/Script.sql":{"default-datasource":"postgres-jdbc-18c58e5b81c-3cfd02cc023e467a","default-catalog":"coderhouse","default-schema":"public"}}}
+{"resources":{"Scripts/Script-1.sql":{"default-datasource":"mysql8-18c58e46ece-74ceab2aada25946","default-catalog":"coderhouse"},"Scripts/Script-2.sql":{"default-datasource":"microsoft-18c58fc4156-16af89a0f7d48562","default-catalog":"coderhouse","default-schema":"dbo"},"Scripts/Script.sql":{"default-datasource":"postgres-jdbc-18c58e5b81c-3cfd02cc023e467a","default-catalog":"coderhouse","default-schema":"public"}}}
