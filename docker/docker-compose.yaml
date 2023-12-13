@@ -155,7 +155,7 @@ services:
     build:
       context: ./django/scripts_docker
     ports:
-      - "8507:8000"
+      - "8507:9600"
     depends_on:
       - db_mssql
       - db_mysql

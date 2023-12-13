@@ -108,7 +108,7 @@ docker compose up --build
 - Read DB tables with Django
 - Read DB tables with FastAPI and SQLAlchemy
 - Read DB tables with Flask and SQLAlchemy
-- Read DB tables with python withot any ORM
+- Read DB tables with python without ORM
 
 ## Links
 
