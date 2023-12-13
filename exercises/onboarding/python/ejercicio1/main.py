@@ -33,8 +33,6 @@ def main():
     img_list = response_json["data"]["memes"]
     img_url = random.choice(img_list)["url"]
 
-    print(img_url)
-
     filename = datetime.datetime.now().strftime("%Y%m%d%H%M%S") + ".jpg"
     path = Path(__file__).resolve().parent / "output" / filename
 
