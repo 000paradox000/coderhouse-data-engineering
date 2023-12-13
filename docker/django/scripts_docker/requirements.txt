@@ -1,0 +1,9 @@
+mysql-connector-python
+psycopg2-binary
+pymssql
+
+SQLAlchemy
+
+Django
+
+ipython

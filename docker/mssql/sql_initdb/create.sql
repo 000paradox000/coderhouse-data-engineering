@@ -66,6 +66,7 @@ WITH
 	FIELDQUOTE = '"',
     TABLOCK
 );
+GO
 
 BULK INSERT calls
 FROM '/opt/data/csv/calls.csv'
@@ -78,3 +79,4 @@ WITH
 	FIELDQUOTE = '"',
     TABLOCK
 );
+GO

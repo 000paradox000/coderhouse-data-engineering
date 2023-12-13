@@ -148,3 +148,17 @@ services:
       - db_postgres
     volumes:
       - ../exercises:/opt/exercises
+
+  # Django
+  # ---------------------------------------------------------------------------
+  django:
+    build:
+      context: ./django/scripts_docker
+    ports:
+      - "8507:8000"
+    depends_on:
+      - db_mssql
+      - db_mysql
+      - db_postgres
+    volumes:
+      - ../exercises:/opt/exercises

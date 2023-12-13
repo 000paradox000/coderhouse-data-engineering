@@ -9,6 +9,13 @@ Teachers:
 
 ## Containers
 
+To satrt the container you can do 
+
+```shell
+cd docker
+docker compose up --build
+```
+
 ### MySQL Database
 
 | Setting       | Value      |
@@ -81,6 +88,23 @@ Teachers:
 | Setting       | Value      |
 |---------------|------------|
 | Port          | 8505       |
+
+### Fastapi
+
+| Setting       | Value |
+|---------------|-------|
+| Port          | 8506  |
+
+### Django
+
+| Setting       | Value |
+|---------------|-------|
+| Port          | 8507  |
+
+## Exercises
+
+
+
 
 ## Links
 
