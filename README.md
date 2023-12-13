@@ -103,8 +103,12 @@ docker compose up --build
 
 ## Exercises
 
+### Personal
 
-
+- Read DB tables with Django
+- Read DB tables with FastAPI and SQLAlchemy
+- Read DB tables with Flask and SQLAlchemy
+- Read DB tables with python withot any ORM
 
 ## Links
 
