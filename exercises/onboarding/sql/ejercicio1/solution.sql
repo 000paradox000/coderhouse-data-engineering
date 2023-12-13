@@ -95,7 +95,6 @@ WHERE
         SELECT customerid FROM customers WHERE occupation LIKE 'Engineer%'
     );
 
-
 -- ============================================================================
 -- d. ¿Valdría la pena invertir en publicidad en el segmento de clientes
 -- que son ingenieros y mayores de 30 años?
