@@ -17,8 +17,8 @@
 SELECT
     agents.name AS agent_name,
     COUNT(calls.callid) AS total_calls,
-    MAX(calls.duration) AS shortest_call,
-    MIN(calls.duration) AS longest_call,
+    MIN(calls.duration) AS shortest_call,
+    MAX(calls.duration) AS longest_call,
     AVG(calls.duration) AS avg_duration,
     SUM(calls.productsold) AS total_sales
 FROM
@@ -32,3 +32,20 @@ GROUP BY
     agents.name
 ORDER BY
     agent_name ASC;
+
+SELECT
+    ag.name AS agent_name,
+    COUNT(*) AS total_calls,
+    MIN(ca.duration) AS shortest_call,
+    MAX(ca.duration) AS longest_call,
+    AVG(ca.duration) AS avg_duration,
+    SUM(ca.productsold) AS total_sales
+FROM
+    calls ca
+JOIN agents ag ON ca.agentid = ag.agentid
+WHERE
+    ca.pickedup = 1
+GROUP BY
+    ag.name
+ORDER BY
+    ag.name ASC;

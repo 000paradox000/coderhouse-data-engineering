@@ -10,40 +10,10 @@
 -- antes de darse por vencidos cuando no tienen éxito.
 
 SELECT
-    a.name,
-    SUM(
-        CASE
-            WHEN productsold = 0 THEN duration
-            ELSE 0
-        END
-    )
-    /
-    SUM(
-        CASE
-            WHEN productsold = 0 THEN 1
-            ELSE 0
-        END
-    ) AS avgWhenNotSold,
-    SUM(
-        CASE
-            WHEN productsold = 1 THEN duration
-            ELSE 0
-        END
-    )
-    /
-    SUM(
-        CASE
-            WHEN productsold = 1 THEN 1
-            ELSE 0
-        END
-    ) AS avgWhenSold
-    FROM
-        calls c
-    JOIN
-        agents a
-    ON
-        c.agentid = a.agentid
-    GROUP BY
-        a.name
-    ORDER BY
-        1;
+ag.name,
+SUM(CASE WHEN ca.productsold = 0 THEN ca.duration ELSE 0 END) / SUM(CASE WHEN ca.productsold = 0 THEN 1 ELSE 0 END) AS avg_when_not_sold,
+SUM(CASE WHEN ca.productsold >= 1 THEN ca.duration ELSE 0 END) / SUM(CASE WHEN ca.productsold >= 1 THEN 1 ELSE 0 END) AS avg_when_sold
+FROM calls ca
+JOIN agents ag ON ca.agentid = ag.agentid
+GROUP BY ag.name
+ORDER BY 1;

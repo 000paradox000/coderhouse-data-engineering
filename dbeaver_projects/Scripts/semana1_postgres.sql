@@ -121,8 +121,8 @@ WHERE
 SELECT
     agents.name AS agent_name,
     COUNT(calls.callid) AS total_calls,
-    MAX(calls.duration) AS shortest_call,
-    MIN(calls.duration) AS longest_call,
+    MIN(calls.duration) AS shortest_call,
+    MAX(calls.duration) AS longest_call,
     AVG(calls.duration) AS avg_duration,
     SUM(calls.productsold) AS total_sales
 FROM
@@ -137,6 +137,23 @@ GROUP BY
 ORDER BY
     agent_name ASC;
 
+SELECT
+    ag.name AS agent_name,
+    COUNT(*) AS total_calls,
+    MIN(ca.duration) AS shortest_call,
+    MAX(ca.duration) AS longest_call,
+    AVG(ca.duration) AS avg_duration,
+    SUM(ca.productsold) AS total_sales
+FROM
+    calls ca
+JOIN agents ag ON ca.agentid = ag.agentid
+WHERE
+    ca.pickedup = 1
+GROUP BY
+    ag.name
+ORDER BY
+    ag.name ASC;
+
 -- ============================================================================
 -- Ejercicio 7
 -- Escribir una consulta que extraiga dos métricas del desempeño de los
@@ -149,41 +166,11 @@ ORDER BY
 -- antes de darse por vencidos cuando no tienen éxito.
 
 SELECT
-    a.name,
-    SUM(
-        CASE
-            WHEN productsold = 0 THEN duration
-            ELSE 0
-        END
-    )
-    /
-    SUM(
-        CASE
-            WHEN productsold = 0 THEN 1
-            ELSE 0
-        END
-    ) AS avgWhenNotSold,
-    SUM(
-        CASE
-            WHEN productsold = 1 THEN duration
-            ELSE 0
-        END
-    )
-    /
-    SUM(
-        CASE
-            WHEN productsold = 1 THEN 1
-            ELSE 0
-        END
-    ) AS avgWhenSold
-    FROM
-        calls c
-    JOIN
-        agents a
-    ON
-        c.agentid = a.agentid
-    GROUP BY
-        a.name
-    ORDER BY
-        1;
+ag.name,
+SUM(CASE WHEN ca.productsold = 0 THEN ca.duration ELSE 0 END) / SUM(CASE WHEN ca.productsold = 0 THEN 1 ELSE 0 END) AS avg_when_not_sold,
+SUM(CASE WHEN ca.productsold >= 1 THEN ca.duration ELSE 0 END) / SUM(CASE WHEN ca.productsold >= 1 THEN 1 ELSE 0 END) AS avg_when_sold
+FROM calls ca
+JOIN agents ag ON ca.agentid = ag.agentid
+GROUP BY ag.name
+ORDER BY 1;
    
