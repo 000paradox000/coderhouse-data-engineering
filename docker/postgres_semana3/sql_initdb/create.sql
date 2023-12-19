@@ -1,4 +1,11 @@
-CREATE TABLE eventos_apocalipticos (
+CREATE TABLE eventos_apocalipticos_data_by_sql_insert (
+    id_evento INTEGER,
+    nombre_evento VARCHAR(255),
+    fecha_evento DATE,
+    descripcion_evento VARCHAR(255)
+);
+
+CREATE TABLE eventos_apocalipticos_data_by_csv (
     id_evento INTEGER,
     nombre_evento VARCHAR(255),
     fecha_evento DATE,
@@ -65,3 +72,5 @@ VALUES
 	(48, 'Desaparición repentina de la energía solar', '2057-06-03', 'La energía solar deja de estar disponible sin ninguna explicación, sumiendo al mundo en la oscuridad'),
 	(49, 'Sobrepoblación incontrolada', '2036-11-17', 'La población mundial alcanza niveles insostenibles, lo que resulta en la escasez de recursos y conflictos constantes'),
 	(50, 'Desplazamiento de los polos magnéticos', '2054-03-23', 'Los polos magnéticos de la Tierra se desplazan rápidamente, causando caos en los sistemas de navegación y comunicación');
+
+COPY eventos_apocalipticos_data_by_csv FROM '/opt/data/csv/data_semana3.csv' DELIMITER ',' CSV HEADER;
