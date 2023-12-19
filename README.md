@@ -114,3 +114,6 @@ docker compose up --build
 
 - [Como Crear BASE DE DATOS en SQL SERVER Desde Cero 😉](https://www.youtube.com/watch?v=fyvEhDgKl7E)
 - [Introducción a las redes en docker. Enlazando contenedores docker](https://www.josedomingo.org/pledin/2020/02/redes-en-docker/)
+- [¿Qué es RedShift?](https://www.youtube.com/watch?v=QV2IE3s5ELE)
+- [¿Qué es un Data Lake House?](https://www.youtube.com/watch?v=1cKGiEy9k4U)
+- [Data Engineering: Data warehouse tech stack with Postgres, DBT, and Airflow](https://github.com/Nathnael12/Datawarehouse)
