@@ -9,7 +9,7 @@ Teachers:
 
 ## Containers
 
-To satrt the container you can do 
+To start the container you can do 
 
 ```shell
 cd docker
