@@ -117,3 +117,5 @@ docker compose up --build
 - [¿Qué es RedShift?](https://www.youtube.com/watch?v=QV2IE3s5ELE)
 - [¿Qué es un Data Lake House?](https://www.youtube.com/watch?v=1cKGiEy9k4U)
 - [Data Engineering: Data warehouse tech stack with Postgres, DBT, and Airflow](https://github.com/Nathnael12/Datawarehouse)
+- [Data Warehouse Tech Stack with PostgreSQL, DBT, Airflow, and Redash](https://medium.com/@degagawolde/data-warehouse-tech-stack-with-postgresql-dbt-airflow-and-redash-a49f238dbeda)
+- [Amazon Redshift Serverless DEMO | Intro to AWS Redshift Serverless| How to setup Redshift Serverless](https://www.youtube.com/watch?v=Kd9_60NC2mY)
