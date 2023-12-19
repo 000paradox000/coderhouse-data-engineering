@@ -4,7 +4,7 @@
 		"mysql8-18c58e46ece-74ceab2aada25946": {
 			"provider": "mysql",
 			"driver": "mysql8",
-			"name": "coderhouse",
+			"name": "db_mysql",
 			"save-password": true,
 			"configuration": {
 				"host": "localhost",
@@ -13,7 +13,48 @@
 				"url": "jdbc:mysql://localhost:3308/coderhouse",
 				"configurationType": "MANUAL",
 				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2",
+					"allowPublicKeyRetrieval": "TRUE"
+				},
 				"auth-model": "native"
+			}
+		},
+		"postgres-jdbc-18c58e5b81c-3cfd02cc023e467a": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "db_postgres",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "5438",
+				"database": "coderhouse",
+				"url": "jdbc:postgresql://localhost:5438/coderhouse",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"provider-properties": {},
+				"auth-model": "native"
+			}
+		},
+		"microsoft-18c58fc4156-16af89a0f7d48562": {
+			"provider": "sqlserver",
+			"driver": "microsoft",
+			"name": "db_mssql",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "1438",
+				"database": "coderhouse",
+				"url": "jdbc:sqlserver://;serverName\u003dlocalhost;port\u003d1438;databaseName\u003dcoderhouse",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-all-schemas@": "false",
+					"sslTrustServerCertificate": "false"
+				},
+				"auth-model": "sqlserver_database"
 			}
 		}
 	},

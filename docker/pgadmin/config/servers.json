@@ -8,6 +8,15 @@
             "Host": "db_postgres",
             "MaintenanceDB": "coderhouse",
             "SSLMode": "prefer"
+        },
+        "2": {
+            "Name": "Coder House Semana 3",
+            "Group": "Servers",
+            "Port": 5432,
+            "Username": "coderhouse",
+            "Host": "db_postgres_semana3",
+            "MaintenanceDB": "coderhouse",
+            "SSLMode": "prefer"
         }
     }
 }

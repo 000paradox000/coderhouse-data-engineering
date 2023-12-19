@@ -1,4 +1,19 @@
-INSERT INTO eventos_apocalipticos (id_evento, nombre_evento ,fecha_evento , descripcion_evento)
+CREATE TABLE eventos_apocalipticos (
+    id_evento INTEGER,
+    nombre_evento VARCHAR(255),
+    fecha_evento DATE,
+    descripcion_evento VARCHAR(255)
+);
+
+CREATE TABLE prediccion_fin_mundo (
+    id_evento INTEGER,
+    nombre_evento VARCHAR(255),
+    fecha_evento DATE,
+    descripcion_evento VARCHAR(255)
+);
+
+INSERT INTO eventos_apocalipticos
+    (id_evento, nombre_evento ,fecha_evento , descripcion_evento)
 VALUES
     (1, 'Apocalipsis Zombie', '2068-01-01', 'Una locura hecha realidad de Zombies'),
     (2, 'Impacto asteroide Rx900', '2025-12-31', 'Un asteroide de 500km se estrellara sobre la tierrs'),

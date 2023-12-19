@@ -48,6 +48,19 @@ services:
       - ./mssql/sql_initdb:/docker-entrypoint-initdb.d
       - ./data:/opt/data
 
+  # PostgreSQL - semana 3
+  # ---------------------------------------------------------------------------
+  db_postgres_semana3:
+    image: postgres
+    environment:
+      POSTGRES_DB: coderhouse
+      POSTGRES_USER: coderhouse
+      POSTGRES_PASSWORD: coderhouse
+    ports:
+      - "5439:5432"
+    volumes:
+      - ./postgres_semana3/sql_initdb:/docker-entrypoint-initdb.d
+
   # Database Web Clients
   # ===========================================================================
 
@@ -73,6 +86,7 @@ services:
       - "8502:80"
     depends_on:
       - db_postgres
+      - db_postgres_semana3
     volumes:
       - ./pgadmin/config/servers.json:/pgadmin4/servers.json
 
