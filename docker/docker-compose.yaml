@@ -60,6 +60,7 @@ services:
       - "5439:5432"
     volumes:
       - ./postgres_semana3/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
 
   # Database Web Clients
   # ===========================================================================

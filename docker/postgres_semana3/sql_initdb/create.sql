@@ -1,3 +1,6 @@
+-- Create
+-- ============================================================================
+
 CREATE TABLE eventos_apocalipticos_data_by_sql_insert (
     id_evento INTEGER,
     nombre_evento VARCHAR(255),
@@ -5,21 +8,14 @@ CREATE TABLE eventos_apocalipticos_data_by_sql_insert (
     descripcion_evento VARCHAR(255)
 );
 
-CREATE TABLE eventos_apocalipticos_data_by_csv (
-    id_evento INTEGER,
-    nombre_evento VARCHAR(255),
-    fecha_evento DATE,
-    descripcion_evento VARCHAR(255)
-);
+CREATE TABLE eventos_apocalipticos_data_by_csv AS TABLE eventos_apocalipticos_data_by_sql_insert;
 
-CREATE TABLE prediccion_fin_mundo (
-    id_evento INTEGER,
-    nombre_evento VARCHAR(255),
-    fecha_evento DATE,
-    descripcion_evento VARCHAR(255)
-);
+CREATE TABLE prediccion_fin_mundo_by_sql_insert AS TABLE eventos_apocalipticos_data_by_sql_insert;
 
-INSERT INTO eventos_apocalipticos
+-- Insert
+-- ============================================================================
+
+INSERT INTO eventos_apocalipticos_data_by_sql_insert
     (id_evento, nombre_evento ,fecha_evento , descripcion_evento)
 VALUES
     (1, 'Apocalipsis Zombie', '2068-01-01', 'Una locura hecha realidad de Zombies'),
@@ -73,4 +69,7 @@ VALUES
 	(49, 'Sobrepoblación incontrolada', '2036-11-17', 'La población mundial alcanza niveles insostenibles, lo que resulta en la escasez de recursos y conflictos constantes'),
 	(50, 'Desplazamiento de los polos magnéticos', '2054-03-23', 'Los polos magnéticos de la Tierra se desplazan rápidamente, causando caos en los sistemas de navegación y comunicación');
 
+
 COPY eventos_apocalipticos_data_by_csv FROM '/opt/data/csv/data_semana3.csv' DELIMITER ',' CSV HEADER;
+
+INSERT INTO prediccion_fin_mundo_by_sql_insert (SELECT * FROM eventos_apocalipticos_data_by_csv);
