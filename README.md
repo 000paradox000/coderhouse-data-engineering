@@ -125,3 +125,7 @@ docker compose up --build
 - [Data Warehouse Tech Stack with PostgreSQL, DBT, Airflow, and Redash](https://medium.com/@degagawolde/data-warehouse-tech-stack-with-postgresql-dbt-airflow-and-redash-a49f238dbeda)
 - [Amazon Redshift Serverless DEMO | Intro to AWS Redshift Serverless| How to setup Redshift Serverless](https://www.youtube.com/watch?v=Kd9_60NC2mY)
 - [Easily load data from an S3 bucket into Postgres using the aws_s3 extension](https://medium.com/analytics-vidhya/easily-load-data-from-an-s3-bucket-into-postgres-using-the-aws-s3-extension-17610c660790)
+
+### Localstack
+
+- [How about S3 Bucket and Localstack?](https://mmarcosab.medium.com/how-about-s3-bucket-and-localstack-b0816bab452a)

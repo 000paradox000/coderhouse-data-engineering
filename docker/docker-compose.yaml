@@ -163,6 +163,10 @@ services:
       - db_mssql
       - db_mysql
       - db_postgres
+    environment:
+      - DEFAULT_REGION=eu-west-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
     volumes:
       - ../exercises:/opt/exercises
 
@@ -216,21 +220,14 @@ services:
   s3:
     image: localstack/localstack
     ports:
-      - "4566:4566"            # LocalStack Gateway
-      - "53:53"                #
-      - "53:53/udp"            #
-      - "8509:443              #
-      - "4510-4530:4510-4530"  # ext services port range
-      - "4571:4571"            #
+      - "4566:4566"
     environment:
-      - DEBUG=${DEBUG-}
-      - SERVICES=${SERVICES-}
-      - DATA_DIR=${DATA_DIR-}
-      - LAMBDA_EXECUTOR=local
-      - LOCALSTACK_API_KEY=${LOCALSTACK_API_KEY-}
-      - HOST_TMP_FOLDER=${TMPDIR:-/tmp/}localstack
-      - DOCKER_HOST=unix:///var/run/docker.sock
+      - DEBUG=1
+      - SERVICES=s3
       - DISABLE_CORS_CHECKS=1
+      - DEFAULT_REGION=eu-west-1
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
     volumes:
-      - "./s3/localstack:/tmp/localstack"
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./s3/init:/etc/localstack/init/ready.d"
+      - ./data:/opt/data

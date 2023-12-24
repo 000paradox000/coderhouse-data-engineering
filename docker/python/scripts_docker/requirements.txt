@@ -5,3 +5,4 @@ ipython
 tabulate
 pillow
 requests
+boto3
