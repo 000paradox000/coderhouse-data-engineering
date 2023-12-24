@@ -99,7 +99,27 @@
 				"url": "jdbc:redshift://http://data-engineer-cluster.cyhh5bfevlmn.us-east-1.redshift.amazonaws.com/:5439/data-engineer-database",
 				"configurationType": "MANUAL",
 				"type": "dev",
-				"provider-properties": {},
+				"auth-model": "native"
+			}
+		},
+		"mysql8-18c9ac83367-7dda43ef46da8f38": {
+			"provider": "mysql",
+			"driver": "mysql8",
+			"name": "db_mysql_semana3",
+			"save-password": true,
+			"configuration": {
+				"host": "localhost",
+				"port": "3309",
+				"database": "coderhouse",
+				"url": "jdbc:mysql://localhost:3309/coderhouse",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"properties": {
+					"connectTimeout": "20000",
+					"rewriteBatchedStatements": "true",
+					"enabledTLSProtocols": "TLSv1,TLSv1.1,TLSv1.2",
+					"allowPublicKeyRetrieval": "TRUE"
+				},
 				"auth-model": "native"
 			}
 		}

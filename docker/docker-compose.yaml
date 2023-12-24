@@ -30,9 +30,9 @@ services:
       MYSQL_USER: coderhouse
       MYSQL_PASSWORD: coderhouse
     ports:
-      - "3308:3306"
+      - "3309:3306"
     volumes:
-      - ./mysql_seman3/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
+      - ./mysql_semana3/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
       - ./mysql_semana3/sql_initdb:/docker-entrypoint-initdb.d
       - ./data:/opt/data
 
@@ -90,6 +90,20 @@ services:
     environment:
       PMA_HOST: db_mysql
       MYSQL_ROOT_PASSWORD: coderhouse
+    depends_on:
+      - db_mysql
+
+  # MySQL - phpmyadmin semana 3
+  # ---------------------------------------------------------------------------
+  phpmyadmin_semana3:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8508:80"
+    environment:
+      PMA_HOST: db_mysql_semana3
+      MYSQL_ROOT_PASSWORD: coderhouse
+    depends_on:
+      - db_mysql_semana3
 
   # PostgreSQL - pgadmin
   # ---------------------------------------------------------------------------

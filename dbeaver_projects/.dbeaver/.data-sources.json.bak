@@ -84,8 +84,23 @@
 					"postgresql.dd.plain.string": "false",
 					"postgresql.dd.tag.string": "false"
 				},
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
+			}
+		},
+		"postgres-redshift-jdbc-18c936f39e0-58331bf411719c12": {
+			"provider": "postgresql",
+			"driver": "postgres-redshift-jdbc",
+			"name": "data-engineer-database",
+			"save-password": true,
+			"configuration": {
+				"host": "http://data-engineer-cluster.cyhh5bfevlmn.us-east-1.redshift.amazonaws.com/",
+				"port": "5439",
+				"database": "data-engineer-database",
+				"url": "jdbc:redshift://http://data-engineer-cluster.cyhh5bfevlmn.us-east-1.redshift.amazonaws.com/:5439/data-engineer-database",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"provider-properties": {},
+				"auth-model": "native"
 			}
 		}
 	},
