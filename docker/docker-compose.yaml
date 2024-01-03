@@ -36,6 +36,20 @@ services:
       - ./mysql_semana3/sql_initdb:/docker-entrypoint-initdb.d
       - ./data:/opt/data
 
+  db_mysql_semana3:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: coderhouse
+      MYSQL_DATABASE: coderhouse
+      MYSQL_USER: coderhouse
+      MYSQL_PASSWORD: coderhouse
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql/config/custom.cnf:/etc/mysql/conf.d/custom.cnf
+      - ./mysql/sql_initdb:/docker-entrypoint-initdb.d
+      - ./data:/opt/data
+
   # PostgreSQL
   # ---------------------------------------------------------------------------
   db_postgres:
